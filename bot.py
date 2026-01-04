@@ -1,0 +1,19 @@
+from aiogram import Bot, Dispatcher, executor, types
+import os
+
+# =========================
+# BOT TOKEN (HOZIRCHA BO‘SH)
+# =========================
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+bot = Bot(token=BOT_TOKEN)
+dp = Dispatcher(bot)
+
+
+@dp.message_handler(commands=['start'])
+async def start_handler(message: types.Message):
+    await message.answer("🚀 Salom! Bot ishlayapti!")
+
+
+if name == 'main':
+    executor.start_polling(dp, skip_updates=True)
